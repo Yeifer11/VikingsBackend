@@ -1,2 +1,0 @@
-# VikingsBackend
-pagina de ropa
