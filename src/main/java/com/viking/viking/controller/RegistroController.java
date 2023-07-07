@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.viking.viking.model.Usuario;
+import com.viking.viking.service.RegistroService;
 
 @RestController
 public class RegistroController {
@@ -14,7 +15,11 @@ public class RegistroController {
 	public String registrarUsuario(@RequestBody Usuario usuario) {
 		System.out.println(usuario.getNombre());
 		System.out.println(usuario.getApellido());
-		return "Registro exitoso";
+		System.out.println(usuario.getCorreo());
+		System.out.print(usuario.getContraseña());
+		RegistroService registroService = new RegistroService();		
+		String respuesta = registroService.registrarUsuario(usuario);
+		return respuesta;
 		
 	}
 	
